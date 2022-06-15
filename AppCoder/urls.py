@@ -2,6 +2,8 @@ from django.urls import path
 from AppCoder.views import inicio, profesores, curso, cursos, estudiantes, entregables, cursosFormulario, busquedaComision, buscar, profesorFormulario, leerProfesores, eliminarProfesor, editarProfesor, EstudiantesList, EstudianteDetalle, EstudianteCreacion, EstudianteEdicion, EstudianteEliminacion, login_request, registro, editarPerfil
 from django.contrib.auth.views import LogoutView
 # from AppCoder.views import curso, profesores
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
   path('curso/', curso),
@@ -29,4 +31,4 @@ urlpatterns = [
 
   path('editarPerfil', editarPerfil, name = "editarPerfil"),
 
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
