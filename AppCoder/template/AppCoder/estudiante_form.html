@@ -1,0 +1,12 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block section_name %}
+<h3>Cursos!</h3>
+{% endblock %}
+{% block contenidoQueCambia %}
+<form method="POST">{% csrf_token %}
+  <h1>Edita el estudiante</h1>
+  {{ form.as_p }}
+  <input type="submit" value="Enviar">
+</form>
+{% endblock %}

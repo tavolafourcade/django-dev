@@ -1,0 +1,12 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block section_name %}
+<!-- <h1>BUSCANDO CURSOS</h1> -->
+<form action="{% url 'buscar' %}" method="GET">
+  <input type="number" placeholder="COMISION" name="camada" id="camada">
+  <input type="submit" value="Buscar">
+</form>
+{% endblock %}
+{% block contenidoQueCambia %}
+<h1>CONTENIDO</h1>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Esta es la sección de ESTUDIANTES</h1>
+{% for estudiante in object_list %} <!-- object_list es una lista de estudiantes -->
+<li>{{estudiante}}</li>
+
+<button>
+  <a href="{% url 'estudiante_detalle' estudiante.id %}">Detalle</a>
+</button>
+<button>
+  <a href="{% url 'estudiante_editar' estudiante.id %}">Editar</a>
+</button>
+<button>
+  <a href="{% url 'estudiante_borrar' estudiante.id %}">Borrar</a>
+</button>
+{% endfor %}
+<br>
+<br>
+<button>
+  <a href="{% url 'estudiante_crear' %}">Crear</a>
+</button>
+{% endblock %}

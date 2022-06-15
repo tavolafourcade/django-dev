@@ -1,0 +1,9 @@
+{% extends "AppCoder/padre.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+<h1>Esta es la sección de ESTUDIANTES</h1>
+<form method="POST">{% csrf_token %}
+  <p>Estás seguro de eliminar el estudiante "{{object}}"</p>
+  <input type="submit" value="SI">
+</form>
+{% endblock %}
